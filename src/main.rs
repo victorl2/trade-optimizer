@@ -1,11 +1,25 @@
-fn main(){
-    println!("Hello World");
-    println!("{}", mars_calculator(92.0));
+use std::error::Error;
+use std::io;
+use std::process;
+use evolution::BRKGA;
+
+mod evolution;
+
+fn main() {
+    if let Err(err) = example() {
+        println!("error running example: {}", err);
+        process::exit(1);
+    }
 }   
 
-fn mars_calculator(kg_earth_weight: f64) -> f64 {
-    let earth_gravity: f64 = 9.81;
-    let mars_gravity = 3.711;
-    let mars_weight = kg_earth_weight * earth_gravity / mars_gravity;
-    mars_weight
+fn example() -> Result<(), Box<dyn Error>> {
+    // Build the CSV reader and iterate over each record.
+    let mut rdr = csv::Reader::from_reader(io::stdin());
+    for result in rdr.records() {
+        // The iterator yields Result<StringRecord, Error>, so we check the
+        // error here.
+        let record = result?;
+        println!("{:?}", record);
+    }
+    Ok(())
 }

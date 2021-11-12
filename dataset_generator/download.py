@@ -46,7 +46,7 @@ def progressBar(iterable, prefix = '', suffix = '', decimals = 1, length = 100, 
 
 if __name__ == '__main__':
     start = '01-09-2020 00:00'
-    end = None #A valid date or None for the current date
+    end = '01-12-2020 00:00' # None #A valid date or None for the current date
 
     currency_pair = 'BTCUSD'
     pair_sufix = 'inverse'

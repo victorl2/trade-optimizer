@@ -5,11 +5,11 @@
 _(soon)_ You will be able to user Docker and avoid all the manual steps required to setup the development environment if you only want to run **TradeOptimizer**, currently you need **Rust 1.56.0+** _(to run the optimizer)_ and **Python 3.8** _(to generate the dataset)_ installed in your system to properly
 
 ### Dataset
-You will use a dataset extracted from the **Bybit Exchange** by a python script that connects to the exchange api.
-
-+ Make sure you have python3+ installed
+You will use a dataset from  the **Bybit Exchange**, a python script is used to connect with the exchange api.
++ Make sure you have **python3+** installed
 + Go inside the folder `dataset_generator`
 + Create a python virtualment and install the required dependencies running `pip3 install -r requirements.txt`
++ run `python download.py` to start downloading the dataset _(it will take a couple of  minutes)_
 
 
 To download the dataset use  get real exchange data.
