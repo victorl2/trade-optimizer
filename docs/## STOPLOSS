@@ -1,0 +1,60 @@
+## STOPLOSS
+The stoploss is the price that will trigger a order closing a open position in a loss to avoid a bigger downturn.
+
+For long positions: X0 ATR starting from the lowest price in the last Y0 candles
+For short positions: X1 ATR starting from the lowest price in the last Y1 candles
+
+## Take profit
+The stoploss is the price that will trigger a order closing a open position in profit.
+
+For long positions: X3 ATR starting from the highest price in the last Y0 candles
+For long positions: X4 ATR starting from the highest price in the last Y1 candles
+
+## Trading Rules / Parameters
+The trading rule combines all indicators, only when all expressiões are satisfied, the strategy will be executed.
+
+### Leverage
+Leverage amplifies gains and loses in a multiplicative way. this value can be configured from 1 to 60.
+
+### MACD
+Configurable parameters: fast ema period, slow ema period and signal ema period ( the range of values are from 2 to 200)
+Expression: the signal is active when the signal line value is above X for long position and below X for short position.
+
+### RSI
+Configurable parameters: period used and [I,J] values that define a range that must contain the rsi value.
+Expression: the signal is active when the rsi value is between I and J.
+
+### EWMA
+Configurable parameters: period used, percentage difference (PD1) from 0.1% to 100%
+Expression: the signal is active when the percentage difference from the ewma is greater than the PD1 defined.
+
+## SMA
+Configurable parameters: period used, maximum percentage difference (PD2) from EWMA to activate the signal.
+Expression: the signal is active when the percentage difference betwen the SMA and the EWMA is lower than PD2.
+
+
+
+[
+    leverage,
+    take profit target ATR, take profit period, stoploss target ATR, stoploss period, 
+    rsi period, rsi bound1, rsi bound2,
+    macd period ema1, macd period ema2, macd singal period, macd_min_value, 
+    
+    ema period, ema_min_percentage_diff_from_price,
+    sma period, max_percentage_diff_from_ema,
+]
+
+check long = 
+    ( MACD > macd_min_value ) && 
+    ( lower bound < RSI < upper bound ) && 
+    ( PD(EMA, candle.close) >= ema_min_percentage_diff_from_price ) &&
+    ( PD(SMA, EMA) <= max_percentage_diff_from_ema)
+
+
+
+
+
+
+
+
+
