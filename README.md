@@ -1,4 +1,4 @@
-# TradeOptmizer
+# TradeOptimizer
 
 
 ## Installation
