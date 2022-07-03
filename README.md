@@ -2,16 +2,15 @@
 
 
 ## Installation
-_(soon)_ You will be able to user Docker and avoid all the manual steps required to setup the development environment if you only want to run **TradeOptimizer**, currently you need **Rust 1.56.0+** _(to run the optimizer)_ and **Python 3.8** _(to generate the dataset)_ installed in your system to properly
+To run **TradeOptimizer** you need **Rust 1.56.0+** _(to run the optimizer)_ and **Python 3.8** _(to generate the dataset)_ installed in your system to properly
 
 ### Dataset
-You will use a dataset from  the **Binance Exchange**, a python script is used to connect with the exchange api.
+You will use a dataset from the **Binance Exchange**, a python script is included to connect with the exchange api.
 + Make sure you have **python3+** installed
 + Go inside the folder `scripts/data_collector`
 + run `.\downloader` to start downloading the dataset _(it will take a couple of  minutes)_
 
-To download the dataset use  get real exchange data.
-The data generate will be a csv with the given format:
+The downloaded dataset uses real exchange data in a csv with the given format:
 
 | timestamp           | open      | high      | low       | close     | volume     | close_time
 | ------------------- |:---------:|:---------:|:---------:|:---------:|:----------:|:------------
