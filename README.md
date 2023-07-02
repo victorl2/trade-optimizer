@@ -19,3 +19,4 @@ The downloaded dataset uses real exchange data in a csv with the given format:
 | 2019-10-18 20:32:00 | 7923.1300 | 7934.0900 | 7922.9000 | 7932.2600 | 9.98577900 | 1571430779999
 
 
+Research paper ( in portuguese ): [https://app.uff.br/riuff/handle/1/25787](https://app.uff.br/riuff/handle/1/25787)
